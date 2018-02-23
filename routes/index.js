@@ -1,6 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
+// GET /register
+router.get('/register', function(req, res, next) {
+  return res.render('register', {title: 'Sign Up'});
+});
+
+// post  /register
+router.post('/register', function(req, res, next){
+  return res.send('User Created!');
+});
+
 // GET /
 router.get('/', function(req, res, next) {
   return res.render('index', { title: 'Home' });
@@ -15,5 +25,7 @@ router.get('/about', function(req, res, next) {
 router.get('/contact', function(req, res, next) {
   return res.render('contact', { title: 'Contact' });
 });
+
+// POST /register
 
 module.exports = router;
